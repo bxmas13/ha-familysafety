@@ -94,6 +94,18 @@ async def async_setup_entry(
                     idx=None,
                     account_id=account.user_id
                 ))
+            entities.append(ScreentimeLimitSensor(
+                coordinator=config_entry.runtime_data,
+                description=FamilySafetySensorEntityDescription(
+                    key="screentime_limit",
+                    value_fn=lambda data: (data._account.today_restriction / 1000) / 60,
+                    device_class=SensorDeviceClass.DURATION,
+                    native_unit_of_measurement_fn=lambda data: "seconds",
+                    name_fn=lambda data: f"{data._account.first_name} Available Screen Time Today"
+                ),
+                idx=None,
+                account_id=account.user_id)
+            )
             entities.extend(
                 [ScreentimeSensor(
                     coordinator=config_entry.runtime_data,
@@ -187,6 +199,11 @@ class GenericSensor(ManagedAccountEntity, SensorEntity):
                 "requests": [d for d in self.coordinator.api.pending_requests if d["puid"] == self._account_id]
             }
 
+class ScreentimeLimitSensor(GenericSensor, SensorEntity):
+    """Report the screentime allowed for today"""
+    def __init__(self, coordinator: FamilySafetyCoordinator,
+                 description: FamilySafetySensorEntityDescription, idx, account_id) -> None:
+        super().__init__(coordinator, description, idx, account_id)
 
 class ScreentimeSensor(GenericSensor, SensorEntity):
     """Aggregate screentime sensor."""
