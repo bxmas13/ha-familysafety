@@ -2,7 +2,7 @@
 
 import logging
 
-from pyfamilysafety import FamilySafety
+from pyfamilysafety import FamilySafety, Authenticator
 from pyfamilysafety.exceptions import HttpException, Unauthorized, AggregatorException
 
 from homeassistant.config_entries import ConfigEntry
@@ -26,12 +26,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: FamilySafetyConfigEntry)
     hass.data.setdefault(DOMAIN, {})
     _LOGGER.debug("Got request to setup entry.")
     try:
-        familysafety = await FamilySafety.create(
+
+        auth = await Authenticator.create(
             token=entry.options.get(
                 "refresh_token", entry.options.get("refresh_token", entry.data.get("refresh_token"))),
-            use_refresh_token=True,
-            experimental=entry.options.get(CONF_KEY_EXPR, CONF_EXPR_DEFAULT)
-        )
+            use_refresh_token=True)
+        familysafety = FamilySafety(auth=auth)
+        familysafety.experimental = entry.options.get(CONF_KEY_EXPR, CONF_EXPR_DEFAULT)
+
         _LOGGER.debug("Login successful, setting up coordinator.")
         entry.runtime_data = FamilySafetyCoordinator(
             hass,
