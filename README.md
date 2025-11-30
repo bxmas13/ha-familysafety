@@ -1,4 +1,4 @@
-# Microsoft Family Safety
+# Microsoft Family Safety (Modified 11/29/2025)
 
 [![GitHub Release][releases-shield]][releases]
 [![GitHub Activity][commits-shield]][commits]
