@@ -75,11 +75,11 @@ If you want to contribute to this please read the [Contribution guidelines](CONT
 
 ---
 
-[ha-familysafety]: https://github.com/pantherale0/ha-familysafety
-[commits-shield]: https://img.shields.io/github/commit-activity/y/pantherale0/ha-familysafety.svg?style=for-the-badge
-[commits]: https://github.com/pantherale0/ha-familysafety/commits/main
+[ha-familysafety]: https://github.com/bxmas13/ha-familysafety
+[commits-shield]: https://img.shields.io/github/commit-activity/y/bxmas13/ha-familysafety.svg?style=for-the-badge
+[commits]: https://github.com/bxmas13/ha-familysafety/commits/main
 [hacs]: https://github.com/hacs/integration
 [hacsbadge]: https://img.shields.io/badge/HACS-Default-green.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/pantherale0/ha-familysafety.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/pantherale0/ha-familysafety.svg?style=for-the-badge
-[releases]: https://github.com/pantherale0/ha-familysafety/releases
+[license-shield]: https://img.shields.io/github/license/bxmas13/ha-familysafety.svg?style=for-the-badge
+[releases-shield]: https://img.shields.io/github/release/bxmas13/ha-familysafety.svg?style=for-the-badge
+[releases]: https://github.com/bxmas13/ha-familysafety/releases
