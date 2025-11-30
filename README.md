@@ -42,7 +42,7 @@ If you would like to try, enable experimental features in the options flow (afte
 
 ## Installation
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=pantherale0&repository=ha-familysafety)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bxmas13&repository=ha-familysafety)
 
 1. Install integration from HACS
 1. Restart Home Assistant
